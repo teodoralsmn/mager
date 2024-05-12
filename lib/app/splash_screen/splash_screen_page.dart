@@ -16,23 +16,25 @@ class SplashScreenPage extends StatelessWidget {
     }, builder: (context, model, child) {
       return StatusbarWidget(
         customBrightness: Brightness.light,
-        child: Scaffold(
-          body: Container(
-            width: double.infinity,
-            height: double.infinity,
-            decoration: BoxDecoration(color: Theme.of(context).primaryColor),
-            alignment: Alignment.center,
-            child: Container(
-              width: 200,
-              height: 200,
-              color: Colors.white,
-              alignment: Alignment.center,
-              child: Text(
-                'Logo',
-                style: mainBody3.copyWith(fontWeight: FontWeight.bold),
-              ),
-            ),
-          ),
+         child: Image.asset(
+          'assets/mager.jpg',
+          fit: BoxFit.cover
+        //   body: Container(
+        //     width: double.infinity,
+        //     height: double.infinity,
+        //     decoration: BoxDecoration(color: Theme.of(context).primaryColor),
+        //     alignment: Alignment.center,
+        //     child: Container(
+        //       width: 200,
+        //       height: 200,
+        //       color: Colors.white,
+        //       alignment: Alignment.center,
+        //       child: Text(
+        //         'Logo',
+        //         style: mainBody3.copyWith(fontWeight: FontWeight.bold),
+              
+            
+          
         ),
       );
     });
