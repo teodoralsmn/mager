@@ -34,8 +34,8 @@ class LoginPage extends StatelessWidget {
               ),
             ),
             Container(
-              width: double.infinity,
-              height: double.infinity,
+              width: 100,
+              height: 100,
               color: Theme.of(context).primaryColor.withOpacity(0.4),
             ),
             Positioned(
