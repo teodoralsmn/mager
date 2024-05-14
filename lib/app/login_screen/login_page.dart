@@ -29,7 +29,7 @@ class LoginPage extends StatelessWidget {
               width: double.infinity,
               height: double.infinity,
               child: Image.asset(
-                'assets/accounting_background.jpg',
+                'assets/background_login.jpg',
                 fit: BoxFit.cover,
               ),
             ),
