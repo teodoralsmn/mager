@@ -29,11 +29,8 @@ class HomeMainPage extends StatelessWidget {
               ),
               Container(
                 width: double.infinity,
-                padding: EdgeInsets.only(
-                    top: margin16,
-                    bottom: margin16,
-                    left: margin16,
-                    right: margin16),
+                padding: EdgeInsets.symmetric(
+                    vertical: margin16, horizontal: margin16),
                 child: Row(
                   children: [
                     GestureDetector(
@@ -173,6 +170,7 @@ class HomeMainPage extends StatelessWidget {
                                                   'Income',
                                                   style: mainBody4.copyWith(
                                                       color: Colors.white),
+                                                      
                                                 ),
                                                 Text(
                                                   model.getIncomeTotal(),
@@ -248,7 +246,9 @@ class HomeMainPage extends StatelessWidget {
                                                         borderRadius:
                                                             BorderRadius
                                                                 .circular(10),
-                                                        color: Colors.green),
+                                                        color: data.type == 0
+                                                            ? Colors.green
+                                                            : Colors.red),
                                                     alignment: Alignment.center,
                                                     child: Icon(
                                                       data.type == 0
@@ -296,13 +296,13 @@ class HomeMainPage extends StatelessWidget {
                                                       Text(
                                                         moneyChanger(data.amount
                                                             .toDouble()),
-                                                        style:
-                                                            mainBody3.copyWith(
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .bold,
-                                                                color: Colors
-                                                                    .green),
+                                                        style: mainBody3.copyWith(
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                            color: data.type ==
+                                                                    0
+                                                                ? Colors.green
+                                                                : Colors.red),
                                                       ),
                                                       SizedBox(
                                                         height: margin4,
@@ -547,8 +547,12 @@ class HomeMainPage extends StatelessWidget {
                                                                       BorderRadius
                                                                           .circular(
                                                                               10),
-                                                                  color: Colors
-                                                                      .green),
+                                                                  color: data.type ==
+                                                                          0
+                                                                      ? Colors
+                                                                          .green
+                                                                      : Colors
+                                                                          .red),
                                                               alignment:
                                                                   Alignment
                                                                       .center,
@@ -605,8 +609,11 @@ class HomeMainPage extends StatelessWidget {
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .bold,
-                                                                      color: Colors
-                                                                          .green),
+                                                                      color: data.type == 0
+                                                                          ? Colors
+                                                                              .green
+                                                                          : Colors
+                                                                              .red),
                                                                 ),
                                                                 SizedBox(
                                                                   height:
@@ -651,11 +658,19 @@ class HomeMainPage extends StatelessWidget {
             bottom: 100,
             right: margin16,
             child: GestureDetector(
-              onTap: () {
-                Navigator.push(
+              onTap: () async {
+                bool? result = await Navigator.push(
                     context,
                     MaterialPageRoute(
                         builder: (_) => const MoneyManagementFormPage()));
+
+                if (result != null && context.mounted) {
+                  if (model.selectedIndex == 0) {
+                    model.onLoadDataDaily(context);
+                  } else {
+                    model.onLoadDataMonthly(context);
+                  }
+                }
               },
               child: Container(
                 width: 50,

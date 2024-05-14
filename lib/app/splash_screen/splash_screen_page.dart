@@ -23,10 +23,7 @@ class SplashScreenPage extends StatelessWidget {
             decoration: BoxDecoration(color: Theme.of(context).secondaryHeaderColor),
             alignment: Alignment.center,
             child: Container(
-              // width: 200,
-              // height: 200,
-              // color: Colors.white,
-              // alignment: Alignment.center,
+              
               child: Image.asset(
                 'assets/mager.png',
                 fit: BoxFit.contain,

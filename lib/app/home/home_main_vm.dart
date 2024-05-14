@@ -109,7 +109,7 @@ class HomeMainVM extends BaseViewModel {
 
   onNextAction(BuildContext context) {
     if (selectedIndex == 0) {
-      selectedDate.add(const Duration(days: 1));
+      selectedDate = selectedDate.add(const Duration(days: 1));
       onLoadDataDaily(context);
     } else {
       selectedMonth = DateTime(
@@ -125,7 +125,7 @@ class HomeMainVM extends BaseViewModel {
 
   onPrevAction(BuildContext context) {
     if (selectedIndex == 0) {
-      selectedDate.subtract(const Duration(days: 1));
+      selectedDate = selectedDate.subtract(const Duration(days: 1));
       onLoadDataDaily(context);
     } else {
       selectedMonth = DateTime(

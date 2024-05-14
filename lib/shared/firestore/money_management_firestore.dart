@@ -12,23 +12,21 @@ class MoneyManagementFirestore {
             .collection(FirestoreHelper.transactionCollection)
             .get();
 
-    List<QueryDocumentSnapshot> dataRaw = [];
+    List<TransactionModel> dataRaw = [];
 
     for (var i = 0; i < result.docs.length; i++) {
-      if (result.docs[i].data()['date'].toString().substring(2) == date) {
-        dataRaw.add(result.docs[i]);
+      if (result.docs[i].data()['date'].toString().substring(3) == date) {
+        dataRaw.add(TransactionModel(
+            id: result.docs[i].id,
+            amount: result.docs[i].data()['amount'],
+            date: result.docs[i].data()['date'],
+            type: result.docs[i].data()['type'],
+            notes: result.docs[i].data()['notes'],
+            category: result.docs[i].data()['category']));
       }
     }
 
-    return transactionGrouping(List.generate(result.docs.length, (index) {
-      return TransactionModel(
-          id: result.docs[index].id,
-          amount: result.docs[index].data()['amount'],
-          date: result.docs[index].data()['date'],
-          type: result.docs[index].data()['type'],
-          notes: result.docs[index].data()['notes'],
-          category: result.docs[index].data()['category']);
-    }));
+    return transactionGrouping(dataRaw);
   }
 
   static Future<List<TransactionModel>> getDataTransactionByDate(String uid,

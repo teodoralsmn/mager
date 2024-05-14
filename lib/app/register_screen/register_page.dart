@@ -25,7 +25,7 @@ class RegisterPage extends StatelessWidget {
               height: double.infinity,
               child: Image.asset(
                 'assets/accounting_background.jpg',
-                fit: BoxFit.cover,
+                fit: BoxFit.fill,
               ),
             ),
             Container(

@@ -130,7 +130,7 @@ class MoneyManagementFormPage extends StatelessWidget {
                   height: margin16,
                 ),
                 Text(
-                  'Category',
+                  'Dates',
                   style: mainBody4.copyWith(fontWeight: FontWeight.bold),
                 ),
                 SizedBox(
