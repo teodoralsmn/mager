@@ -1,6 +1,6 @@
-# mager
+# Mager (Money Manager)
 
-A new Flutter project.
+Mager (Money Manager) merupakan sebuah aplikasi yang dapat mengatur keuangan anda.
 
 ## Getting Started
 
