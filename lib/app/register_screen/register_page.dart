@@ -99,6 +99,28 @@ class RegisterPage extends StatelessWidget {
                     SizedBox(
                       height: margin16,
                     ),
+
+                
+                    Text(
+                      'ulang tahun',
+                      style: mainBodyFont(context),
+                    ),
+                    ValidationWidget(
+                      //validation: model.nameValidation,
+                      child: CustomTextfield(
+                        hintText: 'Fill Name..',
+                        controller: model.ulangTahunController, 
+                        
+                        
+          
+                      )
+                      
+                    ),
+        
+                    SizedBox(
+                      height: margin16,
+                    ),
+
                     Text(
                       'Password',
                       style: mainBodyFont(context),

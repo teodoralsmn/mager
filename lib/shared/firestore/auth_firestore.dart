@@ -34,6 +34,7 @@ class AuthFirestore {
     required String idAuth,
     required String email,
     required String name,
+    required String ulangTahun,
   }) async {
     try {
       await FirestoreHelper.getCollection(FirestoreHelper.userCollection)
@@ -41,6 +42,7 @@ class AuthFirestore {
           .set({
         'email': email,
         'name': name,
+        'ulang_tahun' : ulangTahun,
         'phone': null,
         'profile_picture': null,
         'pin': null

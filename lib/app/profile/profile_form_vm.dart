@@ -14,6 +14,7 @@ import 'package:stacked/stacked.dart';
 class ProfileFormVM extends BaseViewModel {
   XFile? selectedImage;
   TextEditingController phoneController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
 
   onPickImage(BuildContext context) async {
     ImageSource? result = await showDialog(

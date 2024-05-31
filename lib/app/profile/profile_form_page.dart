@@ -148,6 +148,21 @@ class ProfileFormPage extends StatelessWidget {
                 SizedBox(
                   height: margin32,
                 ),
+                SizedBox(
+                  height: margin32,
+                ),
+                Text(
+                  'Email',
+                  style: mainBodyFont(context),
+                ),
+                CustomTextfield(
+                  hintText: 'Update Email..',
+                  controller: model.emailController,
+                  keyboardType: TextInputType.name,
+                ),
+                SizedBox(
+                  height: margin32,
+                ),
                 CustomButton(
                   title: 'Save',
                   onTap: () {

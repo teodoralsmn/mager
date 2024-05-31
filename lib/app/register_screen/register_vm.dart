@@ -11,6 +11,7 @@ class RegisterVM extends BaseViewModel {
   TextEditingController nameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController confirmController = TextEditingController();
+  TextEditingController ulangTahunController = TextEditingController();
 
   String? emailValidation;
   String? nameValidation;
@@ -31,6 +32,8 @@ class RegisterVM extends BaseViewModel {
     }
     notifyListeners();
   }
+
+
 
   onNameValidation(String value) {
     if (value.isEmpty) {
@@ -97,6 +100,7 @@ class RegisterVM extends BaseViewModel {
             idAuth: value.user!.uid,
             email: emailController.text,
             name: nameController.text,
+            ulangTahun: ulangTahunController.text,
           ).then((value) {
             EasyLoading.dismiss();
             if (value) {
