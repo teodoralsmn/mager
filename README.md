@@ -12,7 +12,7 @@ Project ini dikerjakan oleh kami kelompok Dongker dengan anggota :
 Pembagian Tugas Technical : 
 1. Michael Forrie Fortino Leowadu (00000056339) : Mengejerjakan page home, settings dan profile dan juga logical input seperti add transaction, dan juga beberapa logical di page settings dan juga profile, seperti update nomer telefon, email, foto profil, set pin, set dark dan light theme, add category.
 
-2. Teodora Lesmana (00000057079) : Mengerjakan splash screen dan juga register serta login page, serta mengerjakan beberapa logical didalamnya seperti data user yang diinput. Serta upload di github
+2. Teodora Lesmana (00000057079) : Membuat UI design dan wireframe menggunakan Figma, mengerjakan splash screen dan juga register serta login page, serta mengerjakan beberapa logical didalamnya seperti data user yang diinput. Serta upload di github
 
 3. Daffa Raelby (00000056532) : Mengerjakan proses penghubungan data user dengan firebase.
 
